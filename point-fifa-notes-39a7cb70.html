@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · Point FIFA 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fcead1 0%, #fbe1c0 40%, #f7d4a7 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1.5rem;
+        }
+
+        .page-card {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(255, 252, 247, 0.88);
+            backdrop-filter: blur(4px);
+            border-radius: 40px;
+            box-shadow: 0 12px 40px rgba(180, 110, 40, 0.18), 0 6px 18px rgba(0, 0, 0, 0.05);
+            padding: 2.8rem 2.5rem;
+            margin: 0 auto;
+            transition: all 0.2s ease;
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #4d2a0e;
+            margin-bottom: 0.25rem;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        h1 small {
+            font-size: 1rem;
+            font-weight: 400;
+            background: #e4c9ae;
+            color: #3d210b;
+            padding: 0.2rem 0.9rem;
+            border-radius: 60px;
+            letter-spacing: 0.02em;
+            opacity: 0.8;
+        }
+
+        .subhead {
+            font-size: 1.1rem;
+            color: #7a5c3c;
+            margin-top: 0.2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #dba77b;
+            padding-left: 1rem;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #4b2c14;
+            margin: 2.2rem 0 0.8rem 0;
+            border-bottom: 2px solid #eddac6;
+            padding-bottom: 0.4rem;
+        }
+
+        p {
+            line-height: 1.7;
+            color: #3b281a;
+            margin: 1rem 0;
+            font-size: 1.05rem;
+        }
+
+        .highlight-box {
+            background: #f7efe6;
+            border-radius: 28px;
+            padding: 1.6rem 2rem;
+            margin: 1.8rem 0;
+            box-shadow: inset 0 1px 4px rgba(255, 235, 215, 0.7);
+            border: 1px solid #e8d5bf;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        .feature-item {
+            background: #fffaf4;
+            border-radius: 24px;
+            padding: 1.3rem 1.5rem;
+            box-shadow: 0 4px 10px rgba(180, 110, 40, 0.06);
+            border: 1px solid #f0e2d2;
+        }
+
+        .feature-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #5f3b1d;
+            margin-bottom: 0.35rem;
+        }
+
+        .feature-item span {
+            font-size: 0.95rem;
+            color: #5b4230;
+            line-height: 1.5;
+        }
+
+        .usage-note {
+            background: #e8d7c4;
+            border-radius: 60px;
+            padding: 0.6rem 1.4rem;
+            display: inline-block;
+            font-size: 0.95rem;
+            color: #2e1d0e;
+            font-weight: 450;
+            margin: 0.3rem 0 0.8rem;
+        }
+
+        .faq-mini {
+            padding: 0.2rem 0;
+        }
+
+        .faq-q {
+            font-weight: 550;
+            color: #4d2b12;
+            margin-top: 1.1rem;
+        }
+
+        .faq-a {
+            margin: 0.2rem 0 0.6rem 0;
+            padding-left: 0.8rem;
+            border-left: 2px solid #dbb392;
+        }
+
+        .button-link {
+            display: inline-block;
+            background: #dba77b;
+            color: #2f1808;
+            padding: 0.5rem 1.6rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: background 0.15s, box-shadow 0.15s;
+            box-shadow: 0 2px 6px rgba(140, 80, 30, 0.1);
+            border: 1px solid #cf9a6e;
+            margin: 0.4rem 0;
+        }
+
+        .button-link:hover {
+            background: #c99162;
+            box-shadow: 0 4px 12px rgba(160, 90, 35, 0.2);
+            border-color: #b88358;
+        }
+
+        .trust-note {
+            font-size: 0.92rem;
+            color: #705840;
+            background: #f2e5d9;
+            border-radius: 30px;
+            padding: 0.4rem 1.2rem;
+            display: inline-block;
+            margin: 1.2rem 0 0.2rem;
+        }
+
+        .inline-link {
+            color: #914f1f;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #b97f58;
+            transition: border 0.15s;
+        }
+
+        .inline-link:hover {
+            border-bottom: 2px solid #7d421b;
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #e6d2be;
+            margin: 2rem 0 0.8rem;
+            opacity: 0.5;
+        }
+
+        .footer-meta {
+            font-size: 0.9rem;
+            color: #7e644b;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 680px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .page-card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 28px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .highlight-box {
+                padding: 1.2rem 1.2rem;
+            }
+            .subhead {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-card">
+        <h1>
+            <span>⚽ 世界杯</span>
+            <small>产品说明</small>
+        </h1>
+        <div class="subhead">
+            稳定入口 · 页面说明 · 围绕赛事的信息聚合
+        </div>
+
+        <!-- 摘要 -->
+        <p>
+            这里不是赛程直播，也不做戏剧化的预测。我们更愿意把它理解成一个安静的起点——
+            如果你在寻找与<a href="https://point-fifa.com" class="inline-link">世界杯</a>相关的实用信息，想知道怎么更顺畅地跟进赛事动态，这个页面可以提供一些方向。
+            Point FIFA 作为信息整合的索引，不制造焦虑，也不承诺奇迹。
+        </p>
+
+        <div class="highlight-box">
+            <p style="margin: 0; font-weight: 450;">
+                🧭 定位：为希望稳定获取足球赛事信息的普通观赛者，提供直达的页面入口与功能说明。
+            </p>
+        </div>
+
+        <!-- 亮点 -->
+        <h2>🔦 几个值得留意的亮点</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <strong>📋 赛事结构速览</strong>
+                <span>小组赛对阵、淘汰赛路径、场馆分布 —— 信息以清晰层级呈现，减少翻找负担。</span>
+            </div>
+            <div class="feature-item">
+                <strong>📅 历届数据参考</strong>
+                <span>冠亚军记录、经典比分、进球排行，不做过度解读，只做安静陈列。</span>
+            </div>
+            <div class="feature-item">
+                <strong>🧩 模块化阅读</strong>
+                <span>每块内容独立成卡，你可以按需跳转，不用从头到尾翻一遍。</span>
+            </div>
+            <div class="feature-item">
+                <strong>🔗 稳定链接结构</strong>
+                <span>页面地址长期维护，适合作为浏览器书签或日常快速访问的固定入口。</span>
+            </div>
+        </div>
+
+        <!-- 使用建议 -->
+        <h2>💡 适合这样使用</h2>
+        <p>
+            如果你是第一次来到这个页面，可以把它当作一个<strong>桌面或手机端的常驻书签</strong>。
+            日常打开，看看最新的比赛阶段提醒；或者在大赛前，用它来帮助回忆过去几届的脉络。
+            不需要反复搜索，也不用担心迷失在广告和弹窗里。
+            <br><br>
+            我们也建议你用 <a href="https://point-fifa.com" class="inline-link">世界杯</a> 这个关键词向朋友推荐这个页面——
+            尤其适合那些只想安静看球、不想被复杂界面打扰的人。
+        </p>
+
+        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem 1rem; align-items: center; margin: 1.2rem 0;">
+            <span class="usage-note">✓ 无强制弹窗</span>
+            <span class="usage-note">✓ 页面轻量</span>
+            <span class="usage-note">✓ 适合移动端</span>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <h2>📌 常见疑问简答</h2>
+        <div class="faq-mini">
+            <div class="faq-q">这个页面会实时更新比分吗？</div>
+            <div class="faq-a">不保证分钟级更新。页面更侧重赛事框架与背景信息，实时数据建议通过官方渠道确认。</div>
+
+            <div class="faq-q">需要注册或登录才能访问吗？</div>
+            <div class="faq-a">完全不需要。直接打开 <a href="https://point-fifa.com" class="inline-link">世界杯</a> 链接即可浏览全部内容，不收集个人信息。</div>
+
+            <div class="faq-q">页面内容会频繁变动吗？</div>
+            <div class="faq-a">结构保持稳定，仅在赛事周期前后做小幅补充或修正。你可以放心保存书签。</div>
+
+            <div class="faq-q">是否提供多语言版本？</div>
+            <div class="faq-a">目前以中文内容为主，后续会根据反馈考虑增加基础英文对照。</div>
+        </div>
+
+        <!-- 可信但克制 -->
+        <div style="margin: 2rem 0 1rem;">
+            <span class="trust-note">⏳ 信息仅供参考 · 不构成任何投注或决策建议</span>
+            <p style="font-size: 0.95rem; margin-top: 0.8rem; color: #5f4b38;">
+                我们尽力让页面内容清楚、可靠，但不对第三方引用或赛事主办方的临时变更负责。
+                如果你发现任何过时或不准确的信息，欢迎通过页面反馈渠道告知。
+            </p>
+        </div>
+
+        <hr>
+
+        <p style="text-align: center; margin: 1rem 0 0.2rem;">
+            通往<a href="https://point-fifa.com" class="button-link">世界杯</a> · 页面说明索引
+        </p>
+        <div class="footer-meta">
+            Point FIFA · 日常安静入口 · 非官方页面
+        </div>
+    </div>
+</body>
+</html>
