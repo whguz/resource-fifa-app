@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯资料索引 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #fde8cd 0%, #f7cfa1 60%, #efb47a 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2.4rem 1.2rem;
+        }
+
+        .page-wrapper {
+            max-width: 820px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .hero-card {
+            background: #ffffff;
+            border-radius: 36px;
+            box-shadow: 0 16px 40px -12px rgba(140, 70, 20, 0.24);
+            padding: 2.8rem 2.2rem;
+            margin-bottom: 2.2rem;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .hero-card h1 {
+            font-size: 2.1rem;
+            font-weight: 520;
+            letter-spacing: -0.02em;
+            color: #3d2b1a;
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+
+        .hero-card .subhead {
+            font-size: 1.05rem;
+            color: #6b4d32;
+            border-left: 5px solid #d28b54;
+            padding-left: 1.2rem;
+            margin: 0.6rem 0 1.4rem 0;
+            line-height: 1.6;
+        }
+
+        .divider {
+            height: 2px;
+            background: #eddccb;
+            margin: 1.5rem 0 1.8rem 0;
+            border: 0;
+            opacity: 0.6;
+        }
+
+        .summary {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem 2rem;
+            margin: 0.4rem 0 1.8rem 0;
+        }
+
+        .summary-item {
+            flex: 1 1 160px;
+            background: #fcf4eb;
+            padding: 0.9rem 1.1rem;
+            border-radius: 20px;
+            border: 1px solid #eedccb;
+        }
+
+        .summary-item .label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #8c6d4f;
+        }
+
+        .summary-item .value {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #3d2b1a;
+            margin-top: 0.2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.6rem 0 2rem 0;
+        }
+
+        .feature-item {
+            background: #f9efe5;
+            padding: 1.2rem 1.1rem;
+            border-radius: 24px;
+            border: 1px solid #eed6bf;
+        }
+
+        .feature-item h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #4d3422;
+            margin-bottom: 0.3rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #5f4732;
+            line-height: 1.5;
+        }
+
+        .usage-note {
+            background: #e7d4c0;
+            border-radius: 24px;
+            padding: 1.2rem 1.4rem;
+            margin: 1.8rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .usage-note .note-icon {
+            font-size: 1.4rem;
+            background: #ffffffb3;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+        }
+
+        .usage-note .note-text {
+            flex: 1;
+            color: #3d2b1a;
+            font-size: 0.98rem;
+        }
+
+        .faq-mini {
+            margin: 1.4rem 0 1.2rem 0;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.5rem;
+            background: #f9f1e9;
+            border-radius: 30px;
+            padding: 0.6rem 1.2rem;
+            border: 1px solid #edd3b8;
+        }
+
+        .faq-mini summary {
+            font-weight: 480;
+            color: #3d2b1a;
+            cursor: pointer;
+            padding: 0.3rem 0;
+            font-size: 1rem;
+        }
+
+        .faq-mini details p {
+            color: #5f4732;
+            font-size: 0.95rem;
+            padding: 0.6rem 0 0.2rem 0;
+            line-height: 1.5;
+        }
+
+        .link-line {
+            margin-top: 0.8rem;
+            font-size: 1.05rem;
+            color: #3d2b1a;
+        }
+
+        .link-line a {
+            color: #a66530;
+            text-decoration: none;
+            font-weight: 520;
+            background: #fdeddc;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            transition: background 0.2s, transform 0.1s;
+            border: 1px solid #dba97a;
+        }
+
+        .link-line a:hover {
+            background: #e6c9ae;
+            transform: scale(1.02);
+        }
+
+        .trust-badge {
+            background: #fcf4eb;
+            padding: 1rem 1.4rem;
+            border-radius: 30px;
+            text-align: center;
+            border: 1px solid #eedbc8;
+            font-size: 0.9rem;
+            color: #5f4732;
+            margin: 0.6rem 0;
+        }
+
+        .footer-note {
+            margin-top: 1rem;
+            text-align: center;
+            color: #5f4430;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .hero-card {
+                padding: 1.8rem 1.2rem;
+                border-radius: 28px;
+            }
+            .hero-card h1 {
+                font-size: 1.6rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .summary {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+    <div class="hero-card">
+        <h1>世界杯 · 资料整理与信息索引</h1>
+        <div class="subhead">面向研究者、内容创作者与深度爱好者——结构化梳理赛事脉络、球队档案、历史数据与规则变迁。</div>
+        <div class="divider"></div>
+
+        <div class="summary">
+            <div class="summary-item">
+                <span class="label">覆盖赛事</span>
+                <span class="value">1930‑2026</span>
+            </div>
+            <div class="summary-item">
+                <span class="label">条目数量</span>
+                <span class="value">2400+</span>
+            </div>
+            <div class="summary-item">
+                <span class="label">更新周期</span>
+                <span class="value">每月修订</span>
+            </div>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>层次化分类</h3>
+                <p>按届次、大洲、小组赛/淘汰赛、场馆、裁判组等多维度组织，支持交叉检索。</p>
+            </div>
+            <div class="feature-item">
+                <h3>原始来源标注</h3>
+                <p>每条信息附带可信来源（FIFA 官方公报、比赛报告、媒体档案），便于二次核查。</p>
+            </div>
+            <div class="feature-item">
+                <h3>规则演变记录</h3>
+                <p>收录越位、红黄牌、换人限额、VAR 引入等关键规则变更节点及原文出处。</p>
+            </div>
+            <div class="feature-item">
+                <h3>语境化注释</h3>
+                <p>重要比赛附背景说明、争议判罚摘要及后续影响，避免脱离语境的纯数据堆砌。</p>
+            </div>
+        </div>
+
+        <div class="usage-note">
+            <div class="note-icon">📘</div>
+            <div class="note-text">
+                <strong>使用建议</strong>：适合在做前瞻分析、内容策划、数据可视化或历史回顾时作为结构化起点。资料以事实陈述为主，不提供预测、赔率或主观评级。
+            </div>
+        </div>
+
+        <div class="faq-mini">
+            <details>
+                <summary>这个索引和普通百科有什么不同？</summary>
+                <p>侧重赛事内在逻辑：同一支球队在不同届次的表现对比、同一规则改变前后数据变化，以及赛制调整对比赛形态的影响。所有条目均可追溯至一手或二手可信来源。</p>
+            </details>
+            <details>
+                <summary>是否包含2026年世界杯内容？</summary>
+                <p>已收录已公布的赛程框架、主办城市、场馆容量及资格赛赛制。随着官方信息更新，索引同步修订。目前尚未包含未确定的参赛球队或具体比赛时间。</p>
+            </details>
+        </div>
+
+        <div class="link-line">
+            如果你正在系统整理 世界杯 相关资料，可以通过 <a href="https://init-wc2026cn.com">世界杯</a> 索引页面获取结构化信息目录与来源链接。
+        </div>
+
+        <div class="trust-badge">
+            ⚠️ 本索引仅作资料整理用途，不涉及博彩、预测或未经证实的传闻。请以 FIFA 官方公告为准。
+        </div>
+    </div>
+
+    <div class="footer-note">
+        基于公开信息汇编 · 保持克制与可核查
+    </div>
+</div>
+</body>
+</html>
