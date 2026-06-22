@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>赛事笔记 · 世界杯观赛参考</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f7f5f0;
+      color: #2c2b28;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+
+    .page {
+      max-width: 880px;
+      margin: 2rem auto;
+      background-color: #fdfcf9;
+      border-radius: 28px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      padding: 2rem 2.2rem;
+    }
+
+    /* 顶部导航 */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.2rem;
+      border-bottom: 1px solid #e2ddd2;
+      padding-bottom: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .nav-logo {
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #3d3a33;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: #5b554a;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.2rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: #1f1e1a;
+      border-bottom-color: #b8a78c;
+    }
+
+    /* hero 区 */
+    .hero {
+      margin-bottom: 2.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 450;
+      letter-spacing: -0.01em;
+      color: #1a1916;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #6c6559;
+      max-width: 600px;
+    }
+
+    .intro {
+      background-color: #f2efe8;
+      border-left: 4px solid #b7a88b;
+      padding: 1.4rem 1.8rem;
+      border-radius: 0 16px 16px 0;
+      margin: 1.8rem 0 2.4rem;
+    }
+
+    .intro p {
+      margin-bottom: 0.6rem;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    .intro strong {
+      color: #2b2a26;
+    }
+
+    /* 场景模块卡片 */
+    .scene-grid {
+      display: grid;
+      gap: 2rem;
+      margin: 2.8rem 0 2rem;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border: 1px solid #e5dfd4;
+      border-radius: 20px;
+      padding: 1.6rem 1.8rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.02);
+    }
+
+    .scene-card h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: #1f1d18;
+    }
+
+    .scene-card p {
+      color: #3f3b34;
+      margin-bottom: 0.5rem;
+    }
+
+    .scene-card .tag {
+      display: inline-block;
+      background-color: #efebe3;
+      padding: 0.15rem 0.7rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      color: #4f4a3f;
+      margin-right: 0.3rem;
+    }
+
+    /* 引用 / 提示框变体 */
+    .notice-box {
+      background: #f3f0e9;
+      padding: 1.2rem 1.6rem;
+      border-radius: 20px;
+      margin: 2.4rem 0 1.8rem;
+      border: 1px solid #ded8cb;
+    }
+
+    .notice-box .title {
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      color: #3b372e;
+    }
+
+    .notice-box p {
+      font-size: 0.95rem;
+      color: #4d483e;
+    }
+
+    /* 常见说明 (faq 风格) */
+    .faq-short {
+      margin-top: 2.8rem;
+      border-top: 1px solid #e5dfd4;
+      padding-top: 1.8rem;
+    }
+
+    .faq-short h2 {
+      font-weight: 450;
+      font-size: 1.4rem;
+      color: #23211d;
+      margin-bottom: 1rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item .q {
+      font-weight: 500;
+      color: #35322b;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item .a {
+      color: #5a5549;
+      padding-left: 0.8rem;
+      border-left: 2px solid #d9d0c1;
+      padding-left: 1rem;
+    }
+
+    .inline-link {
+      color: #6b604c;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #c7bba8;
+      transition: color 0.2s;
+    }
+
+    .inline-link:hover {
+      color: #2f2b22;
+      text-decoration-color: #8f826b;
+    }
+
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e5dfd4;
+      font-size: 0.85rem;
+      color: #7e7669;
+      text-align: center;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .page {
+        padding: 1.4rem 1.2rem;
+        margin: 1rem auto;
+      }
+
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .scene-card {
+        padding: 1.2rem;
+      }
+
+      .intro {
+        padding: 1rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- 顶部导航 -->
+  <nav class="top-nav">
+    <span class="nav-logo">⚽ 球场笔记</span>
+    <div class="nav-links">
+      <a href="#intro">脉络</a>
+      <a href="#scenes">场景</a>
+      <a href="#faq">常见</a>
+    </div>
+  </nav>
+
+  <!-- hero 区域 -->
+  <div class="hero">
+    <h1>关于世界杯的日常参考</h1>
+    <div class="sub">赛程、对照、延伸 —— 一份轻量观赛便签</div>
+  </div>
+
+  <!-- 核心介绍，自然包含链接 -->
+  <div class="intro" id="intro">
+    <p>四年一次的足球盛事，总能成为朋友闲聊、午后翻看数据的由头。除了直播欢呼，很多人也会在赛后或者饭间打开<a href="https://fifa-app-wc.com" class="inline-link">世界杯</a>相关页面，查一下某支球队的历史战绩、小组对阵走势，或者单纯回顾进球集锦。它更像一个随时可以翻开的参考夹。</p>
+    <p>这个页面收集了几个日常会用到的小场景，方便你快速对照，不需要每次都从头搜索。信息来自公开赛事数据，保持克制，仅作指引。</p>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <div class="scene-grid" id="scenes">
+    <div class="scene-card">
+      <h3>📋 日常查询 · 小组与积分</h3>
+      <p>比赛日结束，想看一眼某个小组的出线形势。直接调出小组积分表，净胜球、交手记录一目了然。不用在多个页面之间跳转。</p>
+      <p>
+        <span class="tag">积分榜</span>
+        <span class="tag">净胜球</span>
+        <span class="tag">头名</span>
+      </p>
+    </div>
+
+    <div class="scene-card">
+      <h3>⚔️ 对照 · 对阵与轮次</h3>
+      <p>朋友问“下一场谁踢谁，几点开球”？打开赛程总览，按时间排列的对阵卡片，包含阶段、场地、比分（如果已完赛）。非常适合周末前做个小计划。</p>
+      <p>
+        <span class="tag">淘汰赛路径</span>
+        <span class="tag">时间对照</span>
+      </p>
+    </div>
+
+    <div class="scene-card">
+      <h3>📖 延伸阅读 · 数据与看点</h3>
+      <p>不只看比分。球员跑动距离、射门转化率、历史交锋记录——这些细节让聊球更有谈资。配合简单的数据模块，不用切到专业统计站也能快速捕获关键点。</p>
+      <p>
+        <span class="tag">纪录</span>
+        <span class="tag">射手榜</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 提示框/引用块 -->
+  <div class="notice-box">
+    <div class="title">📌 使用建议</div>
+    <p>页面数据跟随官方源更新，若遇到关键场次，建议赛前两小时再确认一次开球时间。部分回顾类内容（如经典比赛复盘）会在赛后次日内补充。</p>
+  </div>
+
+  <!-- 常见说明 (faq 摘要) -->
+  <div class="faq-short" id="faq">
+    <h2>常见说明</h2>
+    <div class="faq-item">
+      <div class="q">· 如何快速找到某支球队的全部赛程？</div>
+      <div class="a">在顶部导航或搜索栏输入队名即可筛选出对应场次，同时显示该队已赛场次与未来对阵。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">· 淘汰赛加时/点球结果是否包含？</div>
+      <div class="a">是的，页面会在比赛结束后更新最终结果，并标注点球决胜的比分。</div>
+    </div>
+    <div class="faq-item">
+      <div class="q">· 数据来源可靠吗？</div>
+      <div class="a">基于赛事官方信息整理，与<a href="https://fifa-app-wc.com" class="inline-link">世界杯</a>主数据源保持一致，避免二手干扰。</div>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    一份日常对照 · 内容仅供参考
+  </div>
+</div>
+</body>
+</html>
