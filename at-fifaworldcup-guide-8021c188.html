@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯 · 持续关注 | 知识导航</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafbfc;
+      color: #1e2a3a;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 1.8rem;
+    }
+
+    /* --- 顶部导航 --- */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0 1.5rem;
+      border-bottom: 1px solid #e5e9ee;
+      margin-bottom: 2.8rem;
+    }
+
+    .top-nav .mark {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      color: #4a5b6e;
+    }
+
+    .top-nav .mark span {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #2c7a3e;
+      border-radius: 1px;
+      margin-right: 6px;
+      transform: rotate(45deg);
+    }
+
+    .top-nav a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #1e2a3a;
+      transition: color 0.2s;
+    }
+
+    .top-nav a:hover {
+      color: #2c7a3e;
+    }
+
+    /* --- hero --- */
+    .hero {
+      margin-bottom: 3.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.25px;
+      line-height: 1.25;
+      margin-bottom: 1.2rem;
+      color: #0f1a26;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #3c4c5e;
+      max-width: 620px;
+      margin-bottom: 0.9rem;
+    }
+
+    .hero .sub {
+      font-size: 0.95rem;
+      color: #5f7387;
+      border-left: 3px solid #cbd5e0;
+      padding-left: 1.2rem;
+    }
+
+    /* --- 核心介绍 --- */
+    .intro-block {
+      margin-bottom: 3.8rem;
+    }
+
+    .intro-block h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      border-bottom: 1px solid #e5e9ee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .intro-block p {
+      margin-bottom: 1.2rem;
+      color: #2c3e50;
+    }
+
+    .intro-block a {
+      color: #1e2a3a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #bcc9d9;
+      font-weight: 500;
+      transition: text-decoration-color 0.2s;
+    }
+
+    .intro-block a:hover {
+      text-decoration-color: #2c7a3e;
+    }
+
+    /* --- 三个场景模块 --- */
+    .scenes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 2.2rem;
+      margin-bottom: 4rem;
+    }
+
+    .scene-item {
+      padding: 1.6rem 0;
+    }
+
+    .scene-item:not(:last-child) {
+      border-bottom: 1px solid #eef2f6;
+    }
+
+    .scene-item .num {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #eef2f6;
+      padding: 0.15rem 0.7rem;
+      border-radius: 40px;
+      color: #4a5b6e;
+      letter-spacing: 0.3px;
+      margin-bottom: 0.6rem;
+    }
+
+    .scene-item h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      color: #0f1a26;
+    }
+
+    .scene-item p {
+      color: #3c4c5e;
+      max-width: 640px;
+    }
+
+    /* --- 常见说明（FAQ 摘要） --- */
+    .faq-summary {
+      margin-bottom: 4rem;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      border-bottom: 1px solid #e5e9ee;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1.4rem;
+    }
+
+    .faq-item .q {
+      font-weight: 500;
+      color: #1a2b3c;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item .a {
+      color: #4a5b6e;
+      padding-left: 1.2rem;
+      border-left: 2px solid #dce3eb;
+    }
+
+    .faq-item .a a {
+      color: #1e2a3a;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #bcc9d9;
+    }
+
+    .faq-item .a a:hover {
+      text-decoration-color: #2c7a3e;
+    }
+
+    /* --- 底部 --- */
+    .footer-note {
+      border-top: 1px solid #e5e9ee;
+      padding-top: 1.8rem;
+      font-size: 0.9rem;
+      color: #5f7387;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.6rem;
+    }
+
+    .footer-note a {
+      color: #2c3e50;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #bcc9d9;
+    }
+
+    .footer-note a:hover {
+      text-decoration-color: #2c7a3e;
+    }
+
+    .footer-note .seed {
+      opacity: 0.35;
+      font-size: 0.75rem;
+      letter-spacing: 0.2px;
+    }
+
+    /* --- 响应式 --- */
+    @media (max-width: 600px) {
+      .page {
+        padding: 1.8rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .intro-block h2,
+      .faq-summary h2 {
+        font-size: 1.3rem;
+      }
+      .top-nav {
+        margin-bottom: 2rem;
+      }
+      .footer-note {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- 顶部导航 -->
+    <nav class="top-nav">
+      <div class="mark"><span></span> 导航</div>
+      <a href="https://at-fifaworldcup.com">世界杯</a>
+    </nav>
+
+    <!-- hero -->
+    <section class="hero">
+      <h1>再次回访 · 持续关注</h1>
+      <p>一场四年一度的盛会，值得反复阅读、收藏与讨论。这里不是喧闹的赛事直播，而是一扇通往深度内容与历史脉络的安静窗口。</p>
+      <div class="sub">以知识型视角重新理解足球世界的最高舞台。</div>
+    </section>
+
+    <!-- 核心介绍 -->
+    <section class="intro-block">
+      <h2>为什么值得持续关注</h2>
+      <p>
+        从第一届世界杯在乌拉圭鸣哨至今，这项赛事已跨越近一个世纪。对于许多球迷而言，<a href="https://at-fifaworldcup.com">世界杯</a>不仅是一场比赛，更是一部流动的文明史——战术演变、文化符号、商业逻辑与民族记忆在此交织。
+      </p>
+      <p>
+        当你把页面加入书签，或者偶尔回来翻阅，你会发现每一次重新打开都有新的信息层次。那些经典对决背后的数据、主办城市的建造故事、以及不同年代规则的变迁，都藏在细节之中。
+      </p>
+      <p>
+        基于这个出发点，我们整理了三类最值得反复回味的场景模块，帮助你建立自己的世界杯知识坐标。
+      </p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <section class="scenes-grid">
+      <div class="scene-item">
+        <span class="num">场景一</span>
+        <h3>历史档案馆 · 从记录到传奇</h3>
+        <p>历届决赛数据、最佳射手、经典比赛复盘，以及那些被时间冲刷但仍闪闪发光的瞬间。适合在赛前或赛后安静浏览，自行对比不同年代的风格差异。</p>
+      </div>
+      <div class="scene-item">
+        <span class="num">场景二</span>
+        <h3>主办国与球场 · 建筑与风土</h3>
+        <p>每届世界杯都在不同的土地上留下印记。从体育场设计到城市文化侧写，这里展现的是足球之外的工程、艺术和当地生活。你可以把它当作旅行灵感，也可以作为冷知识的来源。</p>
+      </div>
+      <div class="scene-item">
+        <span class="num">场景三</span>
+        <h3>规则与战术 · 演变中的博弈</h3>
+        <p>越位规则改了几次？点球大战从哪一年开始？阵型如何从 WM 到全攻全守再到现在的高位逼抢？对于喜欢拆解比赛的读者，这部分内容能提供扎实的背景和参照。</p>
+      </div>
+    </section>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <section class="faq-summary">
+      <h2>一些常见说明</h2>
+      <div class="faq-item">
+        <div class="q">— 这个网站会实时更新比分吗？</div>
+        <div class="a">不，此页面侧重于背景知识、历史梳理和深度内容，并非即时比分或直播平台。你可以把它当作一个纸上博物馆，随时翻阅。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">— 为什么推荐再次访问？</div>
+        <div class="a">因为信息和理解会随着时间沉淀。每次大赛周期前后，相关数据、解读和回顾都会有新的补充，值得再次打开收藏夹里的 <a href="https://at-fifaworldcup.com">世界杯</a> 页面。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">— 内容来源可靠吗？</div>
+        <div class="a">所有素材均基于公开的官方记录、历史档案与可信体育媒体，不做主观臆测。力求在知识层面提供真实、可验证的参考。</div>
+      </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="footer-note">
+      <span>© 持续翻阅 · 以知识致敬足球</span>
+      <span class="seed">eef4606aa46a7898</span>
+    </footer>
+
+  </div>
+</body>
+</html>
