@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>世界杯 · 简明指南与访问提醒</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fae6d1 0%, #f5d4b0 30%, #f0c7a0 70%, #ebbba8 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.2rem;
+      line-height: 1.7;
+      color: #3d2c1b;
+    }
+
+    .card-wrap {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 240, 0.92);
+      backdrop-filter: blur(2px);
+      border-radius: 36px 16px 36px 16px;
+      padding: 2.2rem 2.5rem;
+      box-shadow: 0 12px 28px rgba(120, 70, 30, 0.12), 0 4px 12px rgba(160, 100, 50, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(130, 80, 40, 0.15);
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #a35120, #cc7a44);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: #5f3e28;
+      border-left: 4px solid #d9915a;
+      padding-left: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .feature-item {
+      background: #fffbf5;
+      border-radius: 24px 8px 24px 8px;
+      padding: 1.6rem 1.8rem;
+      box-shadow: 0 4px 10px rgba(180, 110, 50, 0.06);
+      transition: background 0.2s;
+    }
+
+    .feature-item h3 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #884a26;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .feature-item p {
+      font-size: 1rem;
+      color: #4f3823;
+    }
+
+    .audience-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1.2rem;
+      margin-top: 0.5rem;
+    }
+
+    .audience-tag {
+      background: #f0d6bc;
+      color: #4f2e1a;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .reminder-box {
+      background: #feefe3;
+      border-radius: 28px 10px 28px 10px;
+      padding: 1.6rem 2rem;
+      margin-top: 1.2rem;
+      border: 1px solid #ebcbb0;
+    }
+
+    .reminder-box strong {
+      color: #a6531e;
+    }
+
+    a {
+      color: #b45d2b;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.1rem 0.3rem;
+      border-radius: 20px;
+      transition: all 0.2s;
+      background: transparent;
+    }
+
+    a:hover {
+      background: #d9915a;
+      color: #fff5ea;
+      box-shadow: 0 2px 8px rgba(180, 80, 20, 0.25);
+    }
+
+    .faq-summary {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin: 1.2rem 0 0.6rem;
+    }
+
+    .faq-item {
+      background: #fff9f2;
+      padding: 0.9rem 1.4rem;
+      border-radius: 40px;
+      border-left: 4px solid #d9915a;
+      font-size: 0.98rem;
+    }
+
+    .faq-item span {
+      font-weight: 600;
+      color: #774021;
+      margin-right: 0.6rem;
+    }
+
+    .btn-link {
+      display: inline-block;
+      background: #d9915a;
+      color: #2f1f12 !important;
+      padding: 0.5rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      box-shadow: 0 4px 0 #b06d40;
+      transition: all 0.1s ease;
+      text-decoration: none;
+      margin-top: 0.2rem;
+    }
+
+    .btn-link:hover {
+      background: #e7a16e;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #b06d40;
+      color: #1f130a !important;
+    }
+
+    .footer-note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6f523b;
+      padding-top: 1.4rem;
+      border-top: 1px solid #e6c8b0;
+      margin-top: 1.2rem;
+    }
+
+    @media (max-width: 780px) {
+      .card {
+        padding: 1.8rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .grid-2col {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .audience-list {
+        gap: 0.6rem;
+      }
+
+      .feature-item {
+        padding: 1.2rem 1.2rem;
+      }
+
+      .reminder-box {
+        padding: 1.2rem 1.4rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+
+      .card {
+        border-radius: 24px 12px 24px 12px;
+        padding: 1.4rem 1rem;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .hero-sub {
+        font-size: 1rem;
+        padding-left: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card-wrap">
+    <!-- hero 卡片 -->
+    <div class="card">
+      <h1>世界杯 · 简明指南</h1>
+      <div class="hero-sub">
+        从赛事焦点到访问路径，一份有温度的观赛准备参考。
+      </div>
+      <p style="font-size:1.05rem; margin-bottom: 1.4rem;">
+        四年一度的绿茵盛宴，不只是竞技，更是文化与记忆的交汇。无论你正在追踪预选赛形势，还是希望快速找到可靠的赛程与数据支撑，这里为你梳理了核心用途与实用提醒，帮助你在信息繁杂的赛事周期中保持清晰。
+      </p>
+      <p>
+        如果你正在寻找一站式的赛事索引，可以了解由社区维护的 <a href="https://zhs-sjb26.com">世界杯</a> 聚合页面。它整合了比赛日历、球队档案与历史纪录，适合作为观赛期间的参考工具。
+      </p>
+    </div>
+
+    <!-- 用途卡片 grid -->
+    <div class="grid-2col">
+      <div class="card" style="padding:1.8rem;">
+        <h2 style="font-size:1.7rem; font-weight:600; color:#884a26; margin-bottom:1.2rem;">⚽ 用途卡片</h2>
+        <div class="feature-item">
+          <h3>📅 赛程速查</h3>
+          <p>小组赛到决赛的完整时间线，包含时区对照与比赛场地信息。不再被时差打乱节奏。</p>
+        </div>
+        <div class="feature-item" style="margin-top:1rem;">
+          <h3>📊 数据记录</h3>
+          <p>球队阵容、进球统计、历史交锋，适合赛前快速浏览，提升观赛沉浸感。</p>
+        </div>
+        <div class="feature-item" style="margin-top:1rem;">
+          <h3>🔗 直达索引</h3>
+          <p>页面内提供经过梳理的链接集合，减少从零搜索的精力损耗。</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:1.8rem;">
+        <h2 style="font-size:1.7rem; font-weight:600; color:#884a26; margin-bottom:1.2rem;">👥 适合人群</h2>
+        <div class="audience-list">
+          <span class="audience-tag">🏟️ 新晋球迷</span>
+          <span class="audience-tag">📋 数据分析爱好者</span>
+          <span class="audience-tag">🌍 多赛事关注者</span>
+          <span class="audience-tag">📆 日程规划型</span>
+          <span class="audience-tag">📚 历史纪录查阅</span>
+          <span class="audience-tag">🎯 快速信息获取</span>
+        </div>
+        <p style="margin-top:1.4rem;">
+          无论你是第一次完整追赛，还是想为朋友做一个简明的观赛指引，这里的内容结构都偏向轻量、直接，不预设专业门槛。每个模块都可以单独使用。
+        </p>
+      </div>
+    </div>
+
+    <!-- 自然链接段落 + 提醒 -->
+    <div class="card">
+      <h2 style="font-size:1.7rem; font-weight:600; color:#884a26; margin-bottom:0.8rem;">🔔 访问提醒</h2>
+      <p>
+        赛事期间各类信息源更新频繁，建议优先使用带有明确版本标记或更新日期的页面。如果希望从一个相对稳定的入口开始，可以试试 
+        <a href="https://zhs-sjb26.com" style="background:#f0d6bc; padding:0.2rem 0.7rem; border-radius:30px;">世界杯</a> 
+        聚合索引。该页面并非官方站点，而是由爱好者整理的信息集合，使用时建议交叉核对关键赛果。
+      </p>
+      <div class="reminder-box">
+        <strong>📌 几点实用提醒</strong>
+        <ul style="margin-top:0.6rem; list-style-type: '· '; padding-left:1.2rem; color:#4a3221;">
+          <li>赛程时间常因转播权调整，提前一日再次确认。</li>
+          <li>部分第三方链接可能包含广告，注意甄别。</li>
+          <li>不要通过非正规渠道购买赛事票务或直播源。</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FAQ摘要 + 最后的链接 -->
+    <div class="card">
+      <h2 style="font-size:1.7rem; font-weight:600; color:#884a26; margin-bottom:1.2rem;">❓ 常见疑问摘要</h2>
+      <div class="faq-summary">
+        <div class="faq-item"><span>Q:</span> 页面多久更新一次？ <span style="font-weight:400; margin-left:0.6rem;">— 通常跟随赛事阶段手动刷新，无固定频率。</span></div>
+        <div class="faq-item"><span>Q:</span> 包含直播链接吗？ <span style="font-weight:400; margin-left:0.6rem;">— 不直接提供，仅收录官方转播商信息页。</span></div>
+        <div class="faq-item"><span>Q:</span> 移动端浏览体验如何？ <span style="font-weight:400; margin-left:0.6rem;">— 采用响应式布局，手机和平板均可正常阅读。</span></div>
+      </div>
+      <div style="margin-top:1.6rem; text-align:right;">
+        <a href="https://zhs-sjb26.com" class="btn-link">世界杯</a>
+      </div>
+      <div class="footer-note">
+        内容仅供参考，不构成任何官方立场。观赛愉快，理性交流。
+      </div>
+    </div>
+  </div>
+</body>
+</html>
