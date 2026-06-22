@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯 · 信息知识集</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5efe8;
+            font-family: "Noto Serif SC", "Source Han Serif SC", "Georgia", "Times New Roman", serif;
+            color: #2d2a24;
+            line-height: 1.75;
+            padding: 2rem 1.2rem;
+        }
+
+        .page {
+            max-width: 840px;
+            margin: 0 auto;
+            background: #fcf9f5;
+            padding: 2.8rem 2.2rem;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        /* 版式标题 */
+        h1 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            letter-spacing: 0.025em;
+            border-left: 6px solid #c8a96e;
+            padding-left: 1rem;
+            margin-bottom: 0.4rem;
+            color: #3a352e;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            color: #7c7366;
+            border-bottom: 1px solid #e3dcd0;
+            padding-bottom: 1.4rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .subhead span {
+            background: #ece5da;
+            padding: 0.2rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: #5f5547;
+        }
+
+        /* 资讯入口说明区 */
+        .intro-card {
+            background: #efe9df;
+            padding: 1.6rem 1.8rem;
+            border-radius: 20px;
+            margin: 1.8rem 0 2.2rem 0;
+            border-left: 6px solid #b59d78;
+        }
+
+        .intro-card p {
+            font-size: 1.02rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro-card a {
+            color: #6a4f2c;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .intro-card a:hover {
+            color: #4b3820;
+            background: #ddd4c4;
+            text-decoration: none;
+            border-radius: 2px;
+        }
+
+        /* 目录感布局 —— 三块知识主题 */
+        .knowledge-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin: 2.4rem 0 1.8rem 0;
+        }
+
+        .topic-block {
+            background: #ffffff;
+            padding: 1.6rem 1.4rem 1.8rem;
+            border-radius: 18px;
+            flex: 1 1 200px;
+            box-shadow: 0 2px 8px rgba(46, 40, 32, 0.04);
+            border: 1px solid #eae2d6;
+            transition: box-shadow 0.1s ease;
+        }
+
+        .topic-block:hover {
+            box-shadow: 0 6px 14px rgba(80, 65, 45, 0.06);
+        }
+
+        .topic-block h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #3f382f;
+            margin-bottom: 0.75rem;
+            border-bottom: 2px dotted #d6cdbb;
+            padding-bottom: 0.3rem;
+        }
+
+        .topic-block ul {
+            list-style: none;
+        }
+
+        .topic-block li {
+            margin-bottom: 0.7rem;
+            padding-left: 1.1rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .topic-block li::before {
+            content: "·";
+            position: absolute;
+            left: 0;
+            color: #b0976d;
+            font-weight: bold;
+        }
+
+        .topic-block a {
+            color: #5f4a2d;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #d0c0a6;
+        }
+
+        .topic-block a:hover {
+            color: #3f2f1b;
+            background: #ece3d4;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+
+        /* 提示框 / 引用信息 */
+        .notice-box {
+            background: #f3ede4;
+            border: 1px solid #ddd2bf;
+            border-radius: 20px;
+            padding: 1.4rem 1.8rem;
+            margin: 2.4rem 0 2rem 0;
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        .notice-box .icon-symbol {
+            font-size: 1.8rem;
+            line-height: 1;
+            margin-right: 0.3rem;
+            color: #b59262;
+        }
+
+        .notice-box .notice-content {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .notice-box .notice-content p {
+            margin-bottom: 0.6rem;
+        }
+
+        .notice-box .notice-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .blockquote-meta {
+            background: #f8f3eb;
+            padding: 1.2rem 1.8rem;
+            border-radius: 18px;
+            border-left: 6px solid #b39768;
+            margin: 2rem 0 2.4rem 0;
+            font-style: normal;
+        }
+
+        .blockquote-meta p {
+            color: #4b4238;
+            font-size: 0.95rem;
+        }
+
+        .blockquote-meta strong {
+            color: #4e3820;
+        }
+
+        /* FAQ 摘要 + 链接 */
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 0.6rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px dashed #ded3c2;
+            padding-bottom: 0.8rem;
+        }
+
+        .faq-item .q {
+            font-weight: 600;
+            color: #423c33;
+        }
+
+        .faq-item .a {
+            font-size: 0.94rem;
+            color: #625a4d;
+            margin-top: 0.2rem;
+        }
+
+        .faq-item a {
+            color: #634e2f;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .faq-item a:hover {
+            background: #e4dacb;
+            border-radius: 2px;
+            text-decoration: none;
+        }
+
+        /* 相关链接区 */
+        .related-area {
+            background: #f2ece2;
+            border-radius: 28px;
+            padding: 1.4rem 1.8rem 1.6rem;
+            margin-top: 2.2rem;
+        }
+
+        .related-area h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            color: #4d4436;
+            margin-bottom: 0.8rem;
+        }
+
+        .related-area .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+        }
+
+        .related-area .tag-group span {
+            font-size: 0.9rem;
+            color: #5f5341;
+        }
+
+        .related-area a {
+            color: #544225;
+            text-decoration: underline wavy 1px #cfbc9d;
+            text-underline-offset: 3px;
+        }
+
+        .related-area a:hover {
+            background: #dbcfbb;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        /* 页脚 */
+        .footer-note {
+            margin-top: 3rem;
+            font-size: 0.82rem;
+            color: #8f8474;
+            border-top: 1px solid #e1d8ca;
+            padding-top: 1.6rem;
+            text-align: center;
+        }
+
+        .footer-note a {
+            color: #6f5d44;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .footer-note a:hover {
+            color: #3f301f;
+        }
+
+        @media (max-width: 540px) {
+            .page {
+                padding: 1.6rem 1rem;
+            }
+
+            h1 {
+                font-size: 1.9rem;
+                padding-left: 0.6rem;
+            }
+
+            .intro-card {
+                padding: 1.2rem;
+            }
+
+            .knowledge-grid {
+                flex-direction: column;
+            }
+
+            .notice-box {
+                padding: 1rem;
+            }
+
+            .faq-item .a {
+                font-size: 0.88rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <h1>世界杯知识库</h1>
+    <div class="subhead">
+        <span>赛事资料 · 持续关注</span>
+        <span>索引编号 e57</span>
+    </div>
+
+    <!-- 说明区 —— 再次访问 / 收藏切入点 -->
+    <div class="intro-card">
+        <p>如果你曾查阅过关于 <strong>世界杯</strong> 的赛程、纪录或历史，那么这里是一处安静的入口。本页面向反复回到这个主题的阅读者：无需重新搜索，即可进入信息索引。</p>
+        <p>对 <a href="https://v-2026worldcup.com">世界杯</a> 保持跟踪，意味着关注赛制、主办城市与晋级路径的更新。知识库聚合了基础数据与解读，便于你随时回溯。</p>
+    </div>
+
+    <!-- 区域：目录感布局 三个知识主题 -->
+    <div class="knowledge-grid">
+        <div class="topic-block">
+            <h3>赛事纪年</h3>
+            <ul>
+                <li>历届决赛圈队伍与赛制沿革</li>
+                <li>主办国轮换规则及未来两届安排</li>
+                <li>相关纪录与经典对阵摘要</li>
+                <li>参考：<a href="https://v-2026worldcup.com">世界杯</a> 赛历</li>
+            </ul>
+        </div>
+        <div class="topic-block">
+            <h3>数据与资格</h3>
+            <ul>
+                <li>各大洲出线名额分配</li>
+                <li>最新预选赛阶段与积分</li>
+                <li>抽签分档及种子队说明</li>
+                <li>参阅 <a href="https://v-2026worldcup.com">世界杯</a> 晋级逻辑</li>
+            </ul>
+        </div>
+        <div class="topic-block">
+            <h3>观赛·收录</h3>
+            <ul>
+                <li>比赛场馆容量与时区参考</li>
+                <li>转播权与官方信息渠道</li>
+                <li>收藏本页以接收更新</li>
+                <li>关于 <a href="https://v-2026worldcup.com">世界杯</a> 的常见问题</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 提示区 类似引用 + 提示框 -->
+    <div class="notice-box">
+        <div class="icon-symbol">⏺</div>
+        <div class="notice-content">
+            <p><strong>再次访问提示：</strong> 如果你在寻找过往浏览过的赛事背景或扩展阅读，本页各板块可作为重新进入的目录。信息源来自公开资料与官方发布，建议定期查阅更新。</p>
+            <p style="font-size:0.9rem; color:#6b5f4d;">相较于直接检索，结构化知识集更适合反复回看。</p>
+        </div>
+    </div>
+
+    <!-- 引用块 / 额外说明 增加差异化 -->
+    <div class="blockquote-meta">
+        <p><strong>· 持续关注的价值 ·</strong> 赛制微调、举办城市增补、预选赛阶段性结果都会引起信息变动。将 <a href="https://v-2026worldcup.com">世界杯</a> 作为固定参考点，能减少碎片信息干扰。</p>
+    </div>
+
+    <!-- FAQ 摘要 三组问题 -->
+    <div style="margin: 1.8rem 0 1.2rem;">
+        <h3 style="font-weight: 500; font-size:1.2rem; color:#4c4236; margin-bottom:1rem;">常见问题摘要</h3>
+        <div class="faq-mini">
+            <div class="faq-item">
+                <div class="q">世界杯每几年举办一次？</div>
+                <div class="a">每四年一届，上一届与下一届之间相隔四个自然年。下一届赛事的具体信息可参考 <a href="https://v-2026worldcup.com">世界杯</a> 页面。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">如何查询各参赛队历史战绩？</div>
+                <div class="a">知识库中「赛事纪年」板块收纳了历届决赛数据；另可通过 <a href="https://v-2026worldcup.com">世界杯</a> 检索队伍胜负记录。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">页面内容多久更新一次？</div>
+                <div class="a">随着预选赛进行及官方公布调整，知识集将保持同步。建议定期回访，亦可收藏本页作为书签。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 相关信息区 / 链接 -->
+    <div class="related-area">
+        <h4>相关信息</h4>
+        <div class="tag-group">
+            <span>📋 赛程框架</span>
+            <span>🏟️ 场地列表</span>
+            <span>📊 积分区</span>
+            <span>🔖 <a href="https://v-2026worldcup.com">世界杯</a></span>
+            <span>📎 参赛队概览</span>
+            <span>📰 官方通讯</span>
+        </div>
+        <p style="margin-top:1rem; font-size:0.9rem; color:#635a4b;">以上模块均可通过顶部导航或知识块进一步浏览。本页面专注于知识库入口，内容保持克制，仅供信息整理与回顾。</p>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+        <p>内容整理自公开资料 · 建议搭配 <a href="https://v-2026worldcup.com">世界杯</a> 主站使用</p>
+        <p style="margin-top:0.3rem;">2025 · 知识库索引</p>
+    </div>
+</div>
+</body>
+</html>
