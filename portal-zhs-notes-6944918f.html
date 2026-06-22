@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>世界杯 · 主题介绍页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #fafbfc;
+            color: #1d2b36;
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px 48px;
+            flex: 1;
+        }
+
+        /* hero */
+        .hero {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .hero-symbol {
+            display: inline-block;
+            font-size: 1rem;
+            letter-spacing: 0.3em;
+            color: #8899a6;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #dce3e8;
+            padding-bottom: 6px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 550;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #0e1c27;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #3d4b58;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        /* section 通用 */
+        section {
+            margin-bottom: 56px;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #0e1c27;
+            margin-bottom: 20px;
+            border-left: 4px solid #c8d2db;
+            padding-left: 16px;
+        }
+
+        .section-sub {
+            font-size: 0.95rem;
+            color: #5e6f7c;
+            margin-top: -8px;
+            margin-bottom: 28px;
+            padding-left: 20px;
+        }
+
+        /* 优势卡片网格 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 24px;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 24px 20px 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 20, 30, 0.03);
+            border: 1px solid #e7edf2;
+            transition: box-shadow 0.18s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 20, 30, 0.06);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 530;
+            margin-bottom: 10px;
+            color: #1d2b36;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #4b5b68;
+        }
+
+        /* 说明区 —— 叙述段落 */
+        .narrative p {
+            margin-bottom: 18px;
+            font-size: 1rem;
+        }
+
+        .narrative .highlight-link {
+            background: #f1f5f8;
+            padding: 12px 0 12px 16px;
+            border-left: 3px solid #8f9ead;
+            margin: 28px 0 18px;
+            font-size: 1rem;
+        }
+
+        .narrative .highlight-link a {
+            color: #005b7a;
+            text-decoration: none;
+            border-bottom: 1px solid #b6c8d4;
+            font-weight: 500;
+        }
+
+        .narrative .highlight-link a:hover {
+            border-bottom: 2px solid #004c66;
+            color: #003b4f;
+        }
+
+        /* FAQ 摘要 */
+        .faq-item {
+            margin-bottom: 24px;
+            border-bottom: 1px dashed #d7e0e7;
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 540;
+            font-size: 1.06rem;
+            color: #0e1c27;
+            margin-bottom: 8px;
+        }
+
+        .faq-a {
+            color: #3d4b58;
+            font-size: 0.96rem;
+        }
+
+        /* 底部链接 */
+        .footer-links {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid #e1e9ef;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #687885;
+        }
+
+        .footer-links a {
+            color: #2d4e63;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        .footer-links a:hover {
+            border-bottom: 1px solid #2d4e63;
+        }
+
+        .footer-links .brand-link {
+            font-weight: 500;
+            font-size: 1rem;
+            color: #003f57;
+        }
+
+        .footer-links .brand-link a {
+            border-bottom: 1px solid #91aebb;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .page {
+                padding: 36px 18px 32px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+                padding-left: 12px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .card {
+                padding: 18px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <div class="hero">
+        <div class="hero-symbol">● 聚焦 · 赛事</div>
+        <h1>世界杯<br>不止于奖杯</h1>
+        <p>四年一度，全世界在同一时刻屏息。从预选赛的漫长跋涉到决赛夜的决绝，足球的故事从不缺少跌宕起伏。</p>
+    </div>
+
+    <!-- 优势区：三个自然特点 -->
+    <section>
+        <div class="section-title">三个维度看赛事</div>
+        <div class="grid-3">
+            <div class="card">
+                <h3>记忆的密度</h3>
+                <p>每一届世界杯都会沉淀下独属于它的画面：一次绝杀、一次扑救、一个少年的眼泪。这些瞬间让时间变得可触摸。</p>
+            </div>
+            <div class="card">
+                <h3>语言的边界</h3>
+                <p>足球是少数不需要翻译的通用语。无论你来自哪座城市、说着何种方言，同一场比赛能瞬间拉近距离。</p>
+            </div>
+            <div class="card">
+                <h3>节奏感</h3>
+                <p>小组赛的试探、淘汰赛的紧张、决赛的万钧之力——世界杯的叙事节奏如同精心编排的乐章，层层递进。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 说明区：叙述风格 -->
+    <section class="narrative">
+        <div class="section-title">关于这一页</div>
+        <p>
+            我们并不想堆砌数据或预测比分。世界杯的魅力恰恰在于它总是偏离预期。一支被低估的队伍可能缔造奇迹，
+            一位老将在谢幕战迸发出最后的光芒。在看台上，陌生人因为一粒进球拥抱；在屏幕前，你或许会忽然想起十年前和父亲一起熬夜看球的夜晚。
+        </p>
+        <p>
+            这个页面的初衷是做一个安静的索引——如果你也需要更系统地回顾历届赛事、了解球队脉络或阅读背景资料，
+            可以访问下面的<span class="highlight-link"><a href="https://portal-zhs-sjb.com">世界杯</a></span>主题站，那里有更完整的记录和持续的更新。我们不渲染狂热，只希望提供一片可以安静翻阅的角落。
+        </p>
+        <p style="margin-top: 16px;">
+            足球终归是关于人的故事。球场上的二十二个人，加上看台上成千上万个，每个人都有自己的版本。而世界杯，恰好提供了那个让所有人聚在一起的节点。
+        </p>
+    </section>
+
+    <!-- FAQ 摘要 -->
+    <section>
+        <div class="section-title">常见疑问摘要</div>
+        <div class="faq-item">
+            <div class="faq-q">— 世界杯多久举办一次？</div>
+            <div class="faq-a">每四年一届，由国际足联组织。最近一届在卡塔尔举行，下一届将由美国、加拿大和墨西哥联合主办。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">— 在哪可以查看完整的赛程和历史数据？</div>
+            <div class="faq-a">很多体育平台都有数据库，但如果你想浏览比较系统、叙述克制的汇总，可以参考 <a href="https://portal-zhs-sjb.com" style="color:#005b7a;text-decoration:underline;">世界杯</a> 页面，内容编排偏向于背景梳理。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">— 如何理解世界杯的文化意义？</div>
+            <div class="faq-a">它既是一种竞技，也是一次全球性的集体仪式。在将近一个月的时间里，不同语言、不同信仰的人共享同一份关注。这种短暂又真实的联结，或许是比赛之外最珍贵的东西。</div>
+        </div>
+    </section>
+
+    <!-- 底部链接 -->
+    <div class="footer-links">
+        <span class="brand-link"><a href="https://portal-zhs-sjb.com">世界杯</a> · 主题站</span>
+        <span>内容仅作介绍 · 2025</span>
+        <span><a href="https://portal-zhs-sjb.com">世界杯</a></span>
+    </div>
+
+</div>
+</body>
+</html>
